@@ -16,6 +16,7 @@
                 padding-top: 50px;
                 padding-bottom: 20px;
             }
+            
         </style>
         <link rel="stylesheet" href="<?=base_url()?>resource/css/bootstrap-theme.css">
 
@@ -73,6 +74,10 @@
       <div class="row">
         <div class="col-lg-2"></div>
         <div class="col-lg-8">
+          
+          <div id="spinner" class="spinner" style="display:none;">
+              <img id="img-spinner" src="<?=base_url()?>resource/img/spinner.gif" alt="Loading"/>
+          </div>
           <div class="target">
           
           </div>  
@@ -96,17 +101,21 @@
         <script type="text/javascript">
         $( document ).ready(function() {
                      console.log( 'ready!' );
+                     $('#spinner').hide();
                      $('#submitb').click(function(){
                       var mov = $("#moviename").val();
                       console.log(mov);
+                      $('#spinner').show();
                       $.ajax({
                             url: '<?=base_url()?>index.php/movie/getdata/'+mov,
                             type: "POST",
                             success: function( resp ) {
+                              $('#spinner').hide();
                               console.log(resp);
                               $( '.target').html(resp);
                             },
                             error: function( req, status, err ) {
+                              $('#spinner').hide();
                               console.log( 'something went wrong', status, err );
                             }
                          });

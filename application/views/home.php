@@ -10,16 +10,16 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="<?=base_url()?>/resource/css/bootstrap.css">
+        <link rel="stylesheet" href="<?=base_url()?>resource/css/bootstrap.css">
         <style>
             body {
                 padding-top: 50px;
                 padding-bottom: 20px;
             }
         </style>
-        <link rel="stylesheet" href="<?=base_url()?>/resource/css/bootstrap-theme.css">
+        <link rel="stylesheet" href="<?=base_url()?>resource/css/bootstrap-theme.css">
 
-        <script src="<?=base_url()?>/resource/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script src="<?=base_url()?>resource/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -90,9 +90,9 @@
     </div>
      <!-- /container -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
-        <script src="<?=base_url()?>/resource/js/jquery-1.11.0.js"></script>
+        <script src="<?=base_url()?>resource/js/jquery-1.11.0.js"></script>
 
-        <script src="<?=base_url()?>/resource/js/bootstrap.min.js"></script>
+        <script src="<?=base_url()?>resource/js/bootstrap.min.js"></script>
         <script type="text/javascript">
         $( document ).ready(function() {
                      console.log( 'ready!' );
@@ -100,7 +100,7 @@
                       var mov = $("#moviename").val();
                       console.log(mov);
                       $.ajax({
-                            url: '<?=base_url()?>/index.php/movie/getdata/'+mov,
+                            url: '<?=base_url()?>index.php/movie/getdata/'+mov,
                             type: "POST",
                             success: function( resp ) {
                               console.log(resp);
